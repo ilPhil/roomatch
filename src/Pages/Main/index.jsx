@@ -1,13 +1,33 @@
+
 import { useSelector } from "react-redux"
+import styles from './Main.module.scss'
+import { Routes, Route } from 'react-router-dom'
+// import Header from './../../components/Header'
+import MainNav from './../../components/MainNav'
+import Rooms from './../Rooms'
+import Likes from '../Likes'
+import Matches from '../Matches'
+import Messages from '../Messages'
+import Profile from '../Profile'
+
 
 
 const Main = () => {
     const reduxStore = useSelector(state => state)
 
     return (
-        <div>
+        <div className={styles.main}>
             {console.log(reduxStore)}
-        </div>
+            {/* <Header /> */}
+            <Routes>
+                <Route path='/' element={<Rooms />} />
+                <Route path='/likes' element={<Likes />} />
+                <Route path='/matches' element={<Matches />} />
+                <Route path='/messages' element={<Messages />} />
+                <Route path='/profile' element={<Profile />} />
+            </Routes>
+            <MainNav />
+       </div>
     )
 }
 
