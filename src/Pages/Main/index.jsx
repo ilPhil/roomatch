@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux"
+
 
 const Main = () => {
+    const reduxStore = useSelector(state => state)
+
     return (
         <div>
-            Main Page
+            {console.log(reduxStore)}
         </div>
     )
 }
