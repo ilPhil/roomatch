@@ -6,9 +6,7 @@ import MainNav from "../../components/MainNav";
 const Rooms = () => {
   return (
     <div className={styles.main}>
-      <Header />
       <RoomCard />
-      <MainNav />
     </div>
   );
 };
