@@ -1,5 +1,6 @@
-// import styles from "./RegistrationForm.module.scss";
+import styles from "./RegistrationForm.module.scss";
 import { useState } from "react";
+import HeaderForms from "../HeaderForms/HeaderForms";
 import FirstStep from "./registrationSteps/FirstStep";
 import SecondStep from "./registrationSteps/SecondStep";
 import ThirdStep from "./registrationSteps/ThirdStep";
@@ -21,8 +22,8 @@ const initialForm = {
   age: 18,
   ilike: [],
   wholikesme: [],
-  city: "",
-  town: "",
+  city: "AG",
+  town: "Agrigento",
   photo: "https://i.ibb.co/NNVky0R/profile-default.png",
 };
 
@@ -54,6 +55,12 @@ const RegistrationForm = () => {
     });
   };
 
+  const setImage = (input) => {
+    setFormData({
+      ...formData,
+      photo: input,
+    });
+  };
 
   const handleInputCities = (input, value) => {
     setFormData({
@@ -66,24 +73,28 @@ const RegistrationForm = () => {
     // console.log(input, e.target.checked)
     setFormData({
       ...formData,
-      iam: {...formData.iam, [input]: e.target.checked ? 1 : 0}
+      iam: { ...formData.iam, [input]: e.target.checked ? 1 : 0 },
     });
   };
 
   switch (step) {
     case 1:
       return (
-        <div className="RegistrationForm">
+        <div className={styles.containerForm}>
+          <HeaderForms step={step} />
           <FirstStep
             nextStep={nextStep}
             handleFormData={handleInputData}
+            setImage={setImage}
             values={formData}
           />
         </div>
       );
     case 2:
       return (
-        <div className="RegistrationForm">
+        <div className={styles.containerForm}>
+          <HeaderForms step={step} />
+
           <SecondStep
             prevStep={prevStep}
             nextStep={nextStep}
@@ -96,17 +107,20 @@ const RegistrationForm = () => {
       );
     case 3:
       return (
-        <div className="RegistrationForm">
+        <div className={styles.containerForm}>
+          <HeaderForms step={step} />
           <ThirdStep prevStep={prevStep} values={formData} />
         </div>
       );
     default:
       return (
+        <div className={styles.containerForm}>
         <FirstStep
           nextStep={nextStep}
           handleFormData={handleInputData}
           values={formData}
         />
+        </div>
       );
   }
 };
