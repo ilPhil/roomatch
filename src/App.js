@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import Main from "./Pages/Main";
 import LoginPage from "./Pages/LoginPage";
-import RegistrationForm from "./components/SubscribeForm/RegistrationForm";
 
 function App() {
   const loginStatus = useSelector((state) => state.logged);
