@@ -130,10 +130,7 @@ const ThirdStep = ({ values, prevStep }) => {
         </button>
         <button
           className={styles.nextStep}
-          onClick={() => {
-            
-            hadleConfirm(values)
-            }}
+          onClick={() => hadleConfirm(values)}
         >
           Go!
         </button>
