@@ -15,6 +15,7 @@ const Profile = () => {
     dispatch(
       changeChar(
         [{
+        {
           propName: 'iam',
           value: {
               ...user.iam, [char]: user.iam[char] === 0 ? 1 : 0
