@@ -6,7 +6,7 @@ const ThirdStep = ({ values, prevStep }) => {
   const { name, surname, age, city, gender, town, photo } = values;
 
   const hadleConfirm = (data) => {
-    httpPOST("/users", data).then((data) => console.log(data));
+    httpPOST("/users", data).then((data) => window.location.href = "/");
   };
 
   return (
@@ -130,7 +130,10 @@ const ThirdStep = ({ values, prevStep }) => {
         </button>
         <button
           className={styles.nextStep}
-          onClick={() => hadleConfirm(values)}
+          onClick={() => {
+            
+            hadleConfirm(values)
+            }}
         >
           Go!
         </button>
