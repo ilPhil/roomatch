@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { likeDislike } from "../../store/actions";
+import { peoplelikeDislike } from "../../store/actions";
 import styles from "./UserCard.module.scss";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
@@ -12,12 +12,12 @@ const UserCard = ({ userInfo }) => {
 
   const likeFunc = () => {
     dispatch(
-      likeDislike(
+      peoplelikeDislike(
         {
           roomId: user.roomId.roomId,
-          roomilike: [...user.roomilike, user._id],
+          roomilike: [...user.roomId.ilike, userInfo._id],
         },
-        user._id,
+        userInfo._id,
         "addlike"
       )
     );
@@ -25,12 +25,12 @@ const UserCard = ({ userInfo }) => {
 
   const dislikeFunc = () => {
     dispatch(
-      likeDislike(
+      peoplelikeDislike(
         {
           roomId: user.roomId.roomId,
-          roomilike: user.roomilike.filter((like) => like !== user._id),
+          roomilike: user.roomId.ilike.filter((like) => like !== userInfo._id),
         },
-        user._id,
+        userInfo._id,
         "removelike"
       )
     );
@@ -56,7 +56,7 @@ const UserCard = ({ userInfo }) => {
                 <progress value={compatibility} max="100"></progress>
               </div>
               <div>
-                {user.ilike.filter((like) => like === userInfo._id).length >
+                {user.roomId.ilike.filter((like) => like === userInfo._id).length >
                 0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}
