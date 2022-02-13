@@ -1,11 +1,35 @@
 @import "./../../libs/variables.scss";
 
 .cardContainer {
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: 10rem;
-    width: 15rem;
+  width: 10rem;
+  margin: 0.5rem;
+  height: 14rem;
+  position: relative;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+
+  .info {
+    position: absolute;
+    width: 100%;
+    bottom: 0rem;
+    padding: 1.5rem 1rem 1rem;
+    color: white;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.884),
+      rgba(0, 0, 0, 0)
+    );
+
+    .name {
+      font-family: $titleFont;
+      font-size: $superSmall;
+    }
+
+    .city {
+      font-family: $paragraphFont;
+      font-size: $labelSize;
+    }
+  }
 }
