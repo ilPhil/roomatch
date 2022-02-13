@@ -1,0 +1,11 @@
+@import "./../../libs/variables.scss";
+
+.cardContainer {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 10rem;
+    width: 15rem;
+}
