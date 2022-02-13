@@ -71,37 +71,37 @@ const RoomDetails = () => {
       <p className={styles.charTitle}>Friendly With</p>
       <div className={styles.charSet}>
         <div className={styles.char}>
-          <span className={user.iam.lgbtq === 1 ? styles.active : ""}>
+          <span className={roomDetails.friendlyWith.lgbtq === 1 ? styles.active : ""}>
             <RiRainbowLine />
           </span>
           LGBTQ+
         </div>
         <div className={styles.char}>
-          <span className={user.iam.pet_owner === 1 ? styles.active : ""}>
+          <span className={roomDetails.friendlyWith.pet_owner === 1 ? styles.active : ""}>
             <GiCat />
           </span>
           Pet Owner
         </div>
         <div className={styles.char}>
-          <span className={user.iam.multicultural === 1 ? styles.active : ""}>
+          <span className={roomDetails.friendlyWith.multicultural === 1 ? styles.active : ""}>
             <FaHandSpock />
           </span>
           Multicultural
         </div>
         <div className={styles.char}>
-          <span className={user.iam.veg === 1 ? styles.active : ""}>
+          <span className={roomDetails.friendlyWith.veg === 1 ? styles.active : ""}>
             <RiPlantFill />
           </span>
           Veg
         </div>
         <div className={styles.char}>
-          <span className={user.iam.smooker === 1 ? styles.active : ""}>
+          <span className={roomDetails.friendlyWith.smooker === 1 ? styles.active : ""}>
             <FaSmoking />
           </span>
           Smoker
         </div>
         <div className={styles.char}>
-          <span className={user.iam.party_lover === 1 ? styles.active : ""}>
+          <span className={roomDetails.friendlyWith.party_lover === 1 ? styles.active : ""}>
             <GiPartyPopper />
           </span>
           Party Lover
