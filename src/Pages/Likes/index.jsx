@@ -8,7 +8,6 @@ const Likes = () => {
 
   return (
     <div className={styles.main}>
-      <h3>Your likes</h3>
       <div className={styles.cardContainer}>
         {user.wholikesme.map((user, index) => (
           <LikesCard key={index} user={user} />
