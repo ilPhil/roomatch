@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./Users.module.scss";
 import UserCard from "../../components/UserCard";
 import { httpGET } from "../../libs/http";
+import { useSelector } from "react-redux";
 
 const Users = () => {
+  const myData = useSelector(state => state.user)
   const [peopleList, setPeopleList] = useState([]);
 
   useEffect(() => {
@@ -13,6 +15,7 @@ const Users = () => {
   return (
     <div className={styles.main}>
       {peopleList.map((user) => (
+        myData._id !== user._id &&
         <UserCard userInfo={user} key={user._id} />
       ))}
     </div>
