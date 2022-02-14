@@ -3,12 +3,33 @@
 .slider {
   width: 22rem;
   margin: 0 auto;
-  overflow-x: hidden;
+  // position: absolute;
+  left: calc(50% - 11rem);
+  overflow-y: hidden;
   scroll-behavior: smooth;
-  cursor: grab;
+  cursor: pointer;
   .sliderWrapper {
     display: flex;
     justify-content: flex-start;
+    width: 100%;
+    position: relative;
+  }
+
+  .leftBtn {
+    bottom: 16rem;
+    left: 2rem;
+  }
+  .rightBtn {
+    bottom: 16rem;
+    left: 15rem;
+  }
+  .rightBtn,
+  .leftBtn {
+    position: relative;
+    background-color: rgba(80, 80, 80, 0);
+    border: none;
+    font-size: 2rem;
+    color: rgb(202, 202, 202);
   }
 }
 
@@ -19,7 +40,7 @@
   position: relative;
   border-radius: 21px;
   margin-bottom: 25px;
-  overflow: hidden;
+  overflow-y: hidden;
   background-size: cover;
   background-position: center;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
@@ -58,7 +79,6 @@
   max-width: 20rem;
   margin: 6rem 2rem 5rem 0.5rem;
   height: 30rem;
-  // position: relative;
   border-radius: 21px;
   margin-bottom: 25px;
   padding: $sidePadding;
