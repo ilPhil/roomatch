@@ -44,7 +44,7 @@ const RoomCard = ({ room }) => {
   const sliderCommands = (el, dir) => {
     if (dir === "right") el.current.style.right = `calc(100% - 1%)`;
     if (dir === "left") el.current.style.right = `0`;
-    if (el.current.style.right > 10) el.current.style.right = `0`;
+    // if (el.current.style.right > 10) el.current.style.right = `0`;
 
     console.log(swipe);
   };
@@ -85,6 +85,12 @@ const RoomCard = ({ room }) => {
                 </div>
               </div>
             </div>
+            <button
+              className={styles.rightBtn}
+              onClick={() => sliderCommands(swipe, "right")}
+            >
+              <BsArrowRightCircle />
+            </button>
           </div>
 
           <div className={styles.infoCardContainer}>
@@ -107,20 +113,26 @@ const RoomCard = ({ room }) => {
               <p>Gallery</p>
               <PhotoGallery photos={room.roomPhotos} />
             </section>
+            <button
+              className={styles.leftBtn}
+              onClick={() => sliderCommands(swipe, "left")}
+            >
+              <BsArrowLeftCircle />
+            </button>
           </div>
         </div>
-        <button
+        {/* <button
           className={styles.leftBtn}
           onClick={() => sliderCommands(swipe, "left")}
         >
           <BsArrowLeftCircle />
-        </button>
-        <button
+        </button> */}
+        {/* <button
           className={styles.rightBtn}
           onClick={() => sliderCommands(swipe, "right")}
         >
           <BsArrowRightCircle />
-        </button>
+        </button> */}
       </div>
     </div>
   );
