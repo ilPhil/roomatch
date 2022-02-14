@@ -21,9 +21,17 @@ const MainNav = () => {
         <Link to={"/rooms"}>
           <li>
             {url.pathname === "/rooms" ? (
-              <img src={roomatchFill} style={{ height: 32, width: 32 }} />
+              <img
+                src={roomatchFill}
+                style={{ height: 32, width: 32 }}
+                alt="logo fill"
+              />
             ) : (
-              <img src={roomatch} style={{ height: 32, width: 32 }} />
+              <img
+                src={roomatch}
+                style={{ height: 32, width: 32 }}
+                alt="logo"
+              />
             )}
           </li>
         </Link>
