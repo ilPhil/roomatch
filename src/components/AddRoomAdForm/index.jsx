@@ -1,73 +1,69 @@
-import styles from "./RegistrationForm.module.scss";
+import styles from "./AddRoomAdForm.module.scss";
 import { useState } from "react";
 import HeaderForms from "../HeaderForms/HeaderForms";
-import FirstStep from "./registrationSteps/FirstStep";
-import SecondStep from "./registrationSteps/SecondStep";
-import ThirdStep from "./registrationSteps/ThirdStep";
+import FirstStep from "./adsSteps/FirstStepForm";
+// import SecondStep from "./adsSteps/SecondStep";
+// import ThirdStep from "./adsSteps/ThirdStep";
 
 const initialForm = {
-  iam: {
-    lgbtq: 0,
-    multicultural: 0,
-    pet_owner: 0,
-    veg: 0,
-    party_lover: 0,
-    smooker: 0,
+  roomType: "",
+  // roomOwner: "",
+  // roomAddress: "",
+  // city: "",
+  // town: "",
+  // roomPhotos: [],
+  // roommates: {
+  //   females: 0,
+  //   males: 0,
+  // },
+  aboutFlat: {
+    bedrooms: 0,
+    bathrooms: 0,
+    kitchen: 0,
+    airCond: 0,
+    billsIncl: 0,
+    wifi: 0,
   },
-  name: "",
-  surname: "",
-  email: "",
-  password: "",
-  gender: "",
-  age: 18,
-  ilike: [],
-  wholikesme: [],
-  city: "AG",
-  town: "Agrigento",
-  photo: "https://i.ibb.co/NNVky0R/profile-default.png",
+  address: "",
+  // ilike: [],
+  // wholikesme: [],
+  // matches: [],
 };
 
-const RegistrationForm = () => {
+const AddRoomAdForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState(initialForm);
-
   const nextStep = () => {
     setStep(step + 1);
   };
-
   const prevStep = () => {
     setStep(step - 1);
   };
-
   const handleInputData = (input) => (e) => {
     setFormData({
       ...formData,
       [input]: e.target.value,
     });
   };
-
   const setImage = (input) => {
     setFormData({
       ...formData,
       photo: input,
     });
   };
-
   const handleInputCities = (input, value) => {
     setFormData({
       ...formData,
       [input]: value,
     });
   };
-
   const handleInputPref = (input, e) => {
     // console.log(input, e.target.checked)
     setFormData({
       ...formData,
-      iam: { ...formData.iam, [input]: e.target.checked ? 1 : 0 },
+      aboutFlat: { ...formData.aboutFlat, [input]: e.target.checked ? 1 : 0 },
     });
   };
-
   switch (step) {
     case 1:
       return (
@@ -76,6 +72,8 @@ const RegistrationForm = () => {
           <FirstStep
             nextStep={nextStep}
             handleFormData={handleInputData}
+            handleInputPref={handleInputPref}
+            handleInputCities={handleInputCities}
             setImage={setImage}
             values={formData}
           />
@@ -85,22 +83,21 @@ const RegistrationForm = () => {
       return (
         <div className={styles.containerForm}>
           <HeaderForms step={step} />
-
-          <SecondStep
+          {/* <SecondStep
             prevStep={prevStep}
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
             handleInputCities={handleInputCities}
             values={formData}
-          />
+          /> */}
         </div>
       );
     case 3:
       return (
         <div className={styles.containerForm}>
-          <HeaderForms step={step} />
-          <ThirdStep prevStep={prevStep} values={formData} />
+          {/* <HeaderForms step={step} />
+          <ThirdStep prevStep={prevStep} values={formData} /> */}
         </div>
       );
     default:
@@ -115,5 +112,4 @@ const RegistrationForm = () => {
       );
   }
 };
-
-export default RegistrationForm;
+export default AddRoomAdForm;

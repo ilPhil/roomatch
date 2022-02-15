@@ -44,19 +44,21 @@ const SecondStep = ({
               value={values.gender}
               required
             >
-
-              <option value='Male'>Male</option>
-              <option value='Famale'>Female</option>
-              <option value='Other'>Other</option>
+              <option value="Male">Male</option>
+              <option value="Famale">Female</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
           <div className={styles.city}>
             <label htmlFor="City">City*</label>
-            <CitiesSelector handleInputCities={handleInputCities} values={values} />
+            <CitiesSelector
+              handleInputCities={handleInputCities}
+              values={values}
+            />
           </div>
 
-          <fieldset>
+          <fieldset className={styles.fieldset}>
             <legend>I'm</legend>
             <section>
               <div className={styles.flexColumn}>
@@ -69,7 +71,6 @@ const SecondStep = ({
                       id="lgbtq"
                       checked={values.iam.lgbtq === 1 ? true : false}
                       onChange={(e) => handleInputPref("lgbtq", e)}
-                    
                     />
                     <span className={styles.mark}></span>
                   </label>
@@ -89,7 +90,10 @@ const SecondStep = ({
                   </label>
                 </div>
                 <div>
-                  <label className={styles.labelContainer} htmlFor="multicultural">
+                  <label
+                    className={styles.labelContainer}
+                    htmlFor="multicultural"
+                  >
                     Multicultural
                     <input
                       checked={values.iam.multicultural === 1 ? true : false}

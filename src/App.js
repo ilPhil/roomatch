@@ -5,6 +5,7 @@ import LandingPage from "./Pages/LandingPage";
 import Registration from "./Pages/Registration";
 import Login from "./Pages/Login";
 import { useEffect } from "react";
+import AddRoomAdForm from "./components/AddRoomAdForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,18 +14,19 @@ function App() {
   useEffect(() => {
     window.localStorage.getItem("roomatch") &&
       dispatch({
-        type: 'LOCAL_STORAGE_USER_UPDATE',
+        type: "LOCAL_STORAGE_USER_UPDATE",
         payload: JSON.parse(window.localStorage.getItem("roomatch")),
       });
   }, [dispatch]);
 
   return (
     <>
-      <Routes>
+      <AddRoomAdForm />
+      {/* <Routes>
         <Route path="*" element={loginStatus ? <Main /> : <LandingPage />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={loginStatus ? <Main /> : <Login />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 }
