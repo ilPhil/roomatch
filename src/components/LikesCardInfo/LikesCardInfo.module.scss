@@ -1,0 +1,63 @@
+@import "./../../libs/variables.scss";
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: #4e0134e1;
+  padding: $sidePadding;
+  .closeBtn {
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: $mainLightBlue;
+    font-size: 2rem;
+  }
+
+  .modalInfo {
+    background-color: white;
+    padding: $sidePadding;
+    margin-top: 8rem;
+    border-radius: $radiusDiv;
+    box-shadow: 0 3px 21px rgba(0, 0, 0, 0.83);
+    .headerInfo {
+      font-size: $smallSize;
+      margin-bottom: 15px;
+      p {
+        font-size: $superSmall;
+      }
+    }
+    .description {
+      font-size: $superSmall;
+      margin-bottom: 15px;
+    }
+  }
+  .icon {
+    color: lighten($mainPink, 8);
+    font-size: 2rem;
+  }
+}
+.fieldset {
+  border: 2px solid $mainLightBlue;
+  border-radius: $radiusDiv;
+  padding: 15px;
+  margin: 25px auto;
+  font-size: $superSmall;
+  legend {
+    font-weight: bold;
+  }
+  section {
+    display: flex;
+  }
+
+  .flexColumn {
+    flex-direction: column;
+
+    margin: 0 1rem;
+  }
+}
