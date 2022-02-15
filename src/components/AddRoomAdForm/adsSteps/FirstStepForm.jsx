@@ -4,7 +4,12 @@
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import styles from "./FirstStepForm.module.scss";
 
-const FirstStep = ({ handleFormData, values, nextStep, handleInputPref }) => {
+const FirstStepForm = ({
+  handleFormData,
+  values,
+  nextStep,
+  handleInputPref,
+}) => {
   // const [message, setMessage] = useState("");
   const submitFormData = (e) => {
     e.preventDefault();
@@ -147,4 +152,4 @@ const FirstStep = ({ handleFormData, values, nextStep, handleInputPref }) => {
     </div>
   );
 };
-export default FirstStep;
+export default FirstStepForm;

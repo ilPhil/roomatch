@@ -1,8 +1,8 @@
 import styles from "./AddRoomAdForm.module.scss";
 import { useState } from "react";
 import HeaderForms from "../HeaderForms/HeaderForms";
-import FirstStep from "./adsSteps/FirstStepForm";
-// import SecondStep from "./adsSteps/SecondStep";
+import FirstStepForm from "./adsSteps/FirstStepForm";
+import SecondStepForm from "./adsSteps/SecondStepForm";
 // import ThirdStep from "./adsSteps/ThirdStep";
 
 const initialForm = {
@@ -69,7 +69,7 @@ const AddRoomAdForm = () => {
       return (
         <div className={styles.containerForm}>
           <HeaderForms step={step} />
-          <FirstStep
+          <FirstStepForm
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
@@ -83,14 +83,14 @@ const AddRoomAdForm = () => {
       return (
         <div className={styles.containerForm}>
           <HeaderForms step={step} />
-          {/* <SecondStep
+          <SecondStepForm
             prevStep={prevStep}
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
             handleInputCities={handleInputCities}
             values={formData}
-          /> */}
+          />
         </div>
       );
     case 3:
@@ -103,7 +103,7 @@ const AddRoomAdForm = () => {
     default:
       return (
         <div className={styles.containerForm}>
-          <FirstStep
+          <FirstStepForm
             nextStep={nextStep}
             handleFormData={handleInputData}
             values={formData}

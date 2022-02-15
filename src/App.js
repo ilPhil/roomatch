@@ -5,7 +5,6 @@ import LandingPage from "./Pages/LandingPage";
 import Registration from "./Pages/Registration";
 import Login from "./Pages/Login";
 import { useEffect } from "react";
-import AddRoomAdForm from "./components/AddRoomAdForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,12 +20,11 @@ function App() {
 
   return (
     <>
-      <AddRoomAdForm />
-      {/* <Routes>
+      <Routes>
         <Route path="*" element={loginStatus ? <Main /> : <LandingPage />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={loginStatus ? <Main /> : <Login />} />
-      </Routes> */}
+      </Routes>
     </>
   );
 }
