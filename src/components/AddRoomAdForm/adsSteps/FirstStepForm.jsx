@@ -10,15 +10,11 @@ const FirstStepForm = ({
   nextStep,
   handleInputPref,
 }) => {
-  // const [message, setMessage] = useState("");
   const submitFormData = (e) => {
     e.preventDefault();
     nextStep();
   };
-  // const selectPhoto = (e) => {
-  //   uploadImg(e.target.files[0])
-  //     .then(result => setImage(result.data.display_url))
-  // };
+  
   return (
     <div>
       <div className={styles.containerForm}>
@@ -84,7 +80,7 @@ const FirstStepForm = ({
               <div className={styles.flexColumn}>
                 <div>
                   <label className={styles.labelContainer} htmlFor="airCond">
-                    Air Conditioner
+                    Air Conditioning
                     <input
                       type="checkbox"
                       name="action"
