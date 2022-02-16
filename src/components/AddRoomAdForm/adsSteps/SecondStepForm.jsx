@@ -23,6 +23,7 @@ const SecondStepForm = ({
               onChange={handleFormData("gender")}
               name="gender"
               id="gender"
+              value={values.gender}
               placeholder="Gender"
               required
             >

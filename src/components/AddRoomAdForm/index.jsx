@@ -6,7 +6,9 @@ import ThirdStepForm from "./adsSteps/ThirdStepForm";
 import HeaderAddRoomForm from "../HeaderAddRoomAdForm/HeaderAddRoomForm";
 
 const initialForm = {
-  roomType: "",
+  roomType: "Single",
+  rent: '0',
+  gender: 'Male',
   // roomOwner: "",
   // roomAddress: "",
   // city: "",
@@ -20,9 +22,9 @@ const initialForm = {
     bedrooms: 0,
     bathrooms: 0,
     kitchen: 0,
-    airCond: 0,
-    billsIncl: 0,
-    wifi: 0,
+    airCond: false,
+    billsIncl: false,
+    wifi: false,
   },
   address: "",
   friendlyfor: {
@@ -43,20 +45,24 @@ const AddRoomAdForm = () => {
   const [formData, setFormData] = useState(initialForm);
   const nextStep = () => {
     setStep(step + 1);
+    console.log(formData)
   };
+
   const prevStep = () => {
     setStep(step - 1);
   };
+
   const handleInputData = (input) => (e) => {
     setFormData({
       ...formData,
       [input]: e.target.value,
     });
   };
+
   const setImage = (input) => {
     setFormData({
       ...formData,
-      roomPhotos: input,
+      roomPhotos: formData.roomPhotos.push(input),
     });
   };
 
@@ -64,8 +70,21 @@ const AddRoomAdForm = () => {
     // console.log(input, e.target.checked)
     setFormData({
       ...formData,
-      aboutFlat: { ...formData.aboutFlat, [input]: e.target.checked ? 1 : 0 },
       friendlyfor: { ...formData.friendlyfor, [input]: e.target.checked ? 1 : 0 },
+    });
+  };
+
+  const handleAbout = (input, e) => {
+    setFormData({
+      ...formData,
+      aboutFlat: { ...formData.aboutFlat, [input]: e.target.value }
+    });
+  };
+
+  const handleAboutCheck = (input, e) => {
+    setFormData({
+      ...formData,
+      aboutFlat: { ...formData.aboutFlat, [input]: e.target.checked  ? true : false }
     });
   };
 
@@ -78,6 +97,8 @@ const AddRoomAdForm = () => {
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
+            handleAbout={handleAbout}
+            handleAboutCheck={handleAboutCheck}
             values={formData}
           />
         </div>
