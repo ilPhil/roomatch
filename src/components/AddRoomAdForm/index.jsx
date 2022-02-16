@@ -1,17 +1,19 @@
 import styles from "./AddRoomAdForm.module.scss";
 import { useState } from "react";
-import HeaderForms from "../HeaderForms/HeaderForms";
 import FirstStepForm from "./adsSteps/FirstStepForm";
 import SecondStepForm from "./adsSteps/SecondStepForm";
-// import ThirdStep from "./adsSteps/ThirdStep";
+import ThirdStepForm from "./adsSteps/ThirdStepForm";
+import HeaderAddRoomForm from "../HeaderAddRoomAdForm/HeaderAddRoomForm";
 
 const initialForm = {
-  roomType: "",
+  roomType: "Single",
+  rent: '0',
+  gender: 'Male',
   // roomOwner: "",
   // roomAddress: "",
   // city: "",
   // town: "",
-  // roomPhotos: [],
+  roomPhotos: [],
   // roommates: {
   //   females: 0,
   //   males: 0,
@@ -20,11 +22,19 @@ const initialForm = {
     bedrooms: 0,
     bathrooms: 0,
     kitchen: 0,
-    airCond: 0,
-    billsIncl: 0,
-    wifi: 0,
+    airCond: false,
+    billsIncl: false,
+    wifi: false,
   },
   address: "",
+  friendlyfor: {
+    lgbtq: 0,
+    multicultural: 0,
+    pet_owner: 0,
+    veg: 0,
+    party_lover: 0,
+    smooker: 0,
+  },
   // ilike: [],
   // wholikesme: [],
   // matches: [],
@@ -35,46 +45,60 @@ const AddRoomAdForm = () => {
   const [formData, setFormData] = useState(initialForm);
   const nextStep = () => {
     setStep(step + 1);
+    console.log(formData)
   };
+
   const prevStep = () => {
     setStep(step - 1);
   };
+
   const handleInputData = (input) => (e) => {
     setFormData({
       ...formData,
       [input]: e.target.value,
     });
   };
+
   const setImage = (input) => {
     setFormData({
       ...formData,
-      photo: input,
+      roomPhotos: formData.roomPhotos.push(input),
     });
   };
-  const handleInputCities = (input, value) => {
-    setFormData({
-      ...formData,
-      [input]: value,
-    });
-  };
+
   const handleInputPref = (input, e) => {
     // console.log(input, e.target.checked)
     setFormData({
       ...formData,
-      aboutFlat: { ...formData.aboutFlat, [input]: e.target.checked ? 1 : 0 },
+      friendlyfor: { ...formData.friendlyfor, [input]: e.target.checked ? 1 : 0 },
     });
   };
+
+  const handleAbout = (input, e) => {
+    setFormData({
+      ...formData,
+      aboutFlat: { ...formData.aboutFlat, [input]: e.target.value }
+    });
+  };
+
+  const handleAboutCheck = (input, e) => {
+    setFormData({
+      ...formData,
+      aboutFlat: { ...formData.aboutFlat, [input]: e.target.checked  ? true : false }
+    });
+  };
+
   switch (step) {
     case 1:
       return (
         <div className={styles.containerForm}>
-          <HeaderForms step={step} />
+          <HeaderAddRoomForm step={step} />
           <FirstStepForm
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
-            handleInputCities={handleInputCities}
-            setImage={setImage}
+            handleAbout={handleAbout}
+            handleAboutCheck={handleAboutCheck}
             values={formData}
           />
         </div>
@@ -82,13 +106,12 @@ const AddRoomAdForm = () => {
     case 2:
       return (
         <div className={styles.containerForm}>
-          <HeaderForms step={step} />
+          <HeaderAddRoomForm step={step} />
           <SecondStepForm
             prevStep={prevStep}
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
-            handleInputCities={handleInputCities}
             values={formData}
           />
         </div>
@@ -96,8 +119,12 @@ const AddRoomAdForm = () => {
     case 3:
       return (
         <div className={styles.containerForm}>
-          {/* <HeaderForms step={step} />
-          <ThirdStep prevStep={prevStep} values={formData} /> */}
+          <HeaderAddRoomForm step={step} />
+          <ThirdStepForm
+            prevStep={prevStep}
+            values={formData}
+            setImage={setImage}
+          />
         </div>
       );
     default:
