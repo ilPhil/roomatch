@@ -9,15 +9,7 @@ const initialForm = {
   roomType: "Single",
   rent: '0',
   gender: 'Male',
-  // roomOwner: "",
-  // roomAddress: "",
-  // city: "",
-  // town: "",
   roomPhotos: [],
-  // roommates: {
-  //   females: 0,
-  //   males: 0,
-  // },
   aboutFlat: {
     bedrooms: 0,
     bathrooms: 0,
@@ -35,9 +27,6 @@ const initialForm = {
     party_lover: 0,
     smooker: 0,
   },
-  // ilike: [],
-  // wholikesme: [],
-  // matches: [],
 };
 
 const AddRoomAdForm = () => {
@@ -45,7 +34,6 @@ const AddRoomAdForm = () => {
   const [formData, setFormData] = useState(initialForm);
   const nextStep = () => {
     setStep(step + 1);
-    console.log(formData)
   };
 
   const prevStep = () => {
@@ -60,9 +48,10 @@ const AddRoomAdForm = () => {
   };
 
   const setImage = (input) => {
+    let newPhotos = [...formData.roomPhotos, input]
     setFormData({
       ...formData,
-      roomPhotos: formData.roomPhotos.push(input),
+      roomPhotos: newPhotos,
     });
   };
 
@@ -122,7 +111,7 @@ const AddRoomAdForm = () => {
           <HeaderAddRoomForm step={step} />
           <ThirdStepForm
             prevStep={prevStep}
-            values={formData}
+            formData={formData}
             setImage={setImage}
           />
         </div>

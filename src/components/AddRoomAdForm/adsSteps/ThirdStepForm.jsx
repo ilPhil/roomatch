@@ -2,7 +2,7 @@ import { BsArrowLeftCircle } from "react-icons/bs";
 import styles from "./ThirdStepForm.module.scss";
 import { uploadImg } from "../../../libs/http";
 
-const ThirdStepForm = ({ values, prevStep, setImage }) => {
+const ThirdStepForm = ({ formData, prevStep, setImage }) => {
   const submitFormData = (e) => {
     e.preventDefault();
     prevStep();
@@ -11,17 +11,19 @@ const ThirdStepForm = ({ values, prevStep, setImage }) => {
   const photoGallery = (e) => {
     uploadImg(e.target.files[0]).then((result) => {
       setImage(result.data.display_url)
-      console.log(values)
-    }
-    );
+    })
   };
+
+  const formSubmit = () => {
+    console.log(formData)
+  }
 
   return (
     <div className={styles.containerForm}>
       <h4>Upload min. 3 pics</h4>
-      {/* {values.roomPhotos.map((photo, index) => (
+      {formData.roomPhotos.map((photo, index) => (
         <img src={photo} key={index} alt="roomatch" />
-      ))} */}
+      ))}
       <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
         <div className={styles.img}>
           <label htmlFor="upload" className={styles.uploadBtn}>
@@ -42,6 +44,7 @@ const ThirdStepForm = ({ values, prevStep, setImage }) => {
           <BsArrowLeftCircle />
         </button>
       </form>
+        <button onClick={() => formSubmit()}>Conferma</button>
     </div>
   );
 };
