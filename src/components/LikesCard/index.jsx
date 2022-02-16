@@ -4,6 +4,7 @@ import LikesCardInfo from "./../LikesCardInfo";
 
 const LikesCard = ({ user }) => {
   const [showInfo, setShowInfo] = useState(false);
+
   return (
     <>
       <div
@@ -21,7 +22,11 @@ const LikesCard = ({ user }) => {
         </div>
       </div>
       {showInfo && (
-        <LikesCardInfo showInfo={showInfo} setShowInfo={setShowInfo} />
+        <LikesCardInfo
+          user={user}
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+        />
       )}
     </>
   );

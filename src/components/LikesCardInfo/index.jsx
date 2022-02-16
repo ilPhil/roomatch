@@ -1,25 +1,37 @@
+// import { useSelector, useDispatch } from "react-redux";
+// import { likeDislike } from "../../store/actions";
+
 import styles from "./LikesCardInfo.module.scss";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
 // import { FaHeart } from "react-icons/fa";
 
-const LikesCardInfo = ({ showInfo, setShowInfo }) => {
+const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
   return (
     <div className={styles.background}>
       <div className={styles.closeBtn} to="/">
         <IoIosCloseCircle onClick={() => setShowInfo(!showInfo)} />
       </div>
       <div className={styles.modalInfo}>
-        <div className={styles.headerInfo}>
-          <h3>Name Surname </h3>
-          <p>Age 32</p>
-          <p>Augusta, (SR)</p>
+        <div className={styles.flexHeaderInfo}>
+          <div className={styles.headerInfo}>
+            <h3>
+              {user.name} {user.surname}
+            </h3>
+            {console.log(user)}
+            <p>Age: {user.age}</p>
+            <p>{user.city}</p>
+          </div>
+          <div className={styles.likeBtn}>
+            <FiHeart className={styles.icon} />
+          </div>
         </div>
+
         <p className={styles.description}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
           scelerisque dignissim orci vel gravida. Vestibulum ante ipsum primis
           in faucibus orci luctus et ultrices posuere cubilia curae; Aenean
-          scelerisque dignissim
+          scelerisque dignissim.
         </p>
 
         <fieldset className={styles.fieldset}>
@@ -34,8 +46,7 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
                     type="checkbox"
                     name="action"
                     id="lgbtq"
-                    // checked={values.friendlyFor.lgbtq === 1 ? true : false}
-                    // onChange={(e) => handleInputPref("lgbtq", e)}
+                    checked={user.iam.lgbtq === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -46,10 +57,9 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
                   Pet owner
                   <input
                     readOnly
-                    // checked={values.friendlyFor.pet_owner === 1 ? true : false}
-                    // onChange={(e) => handleInputPref("pet_owner", e)}
                     type="checkbox"
                     name="action"
+                    checked={user.iam.pet_owner === 1 ? true : false}
                     id="pet_owner"
                   />
                   <span className={styles.mark}></span>
@@ -63,13 +73,10 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
                   Multicultural
                   <input
                     readOnly
-                    // checked={
-                    // values.friendlyFor.multicultural === 1 ? true : false
-                    // }
-                    // onChange={(e) => handleInputPref("multicultural", e)}
                     type="checkbox"
                     name="action"
                     id="multicultural"
+                    checked={user.iam.multicultural === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -81,11 +88,11 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
                 <label className={styles.labelContainer} htmlFor="veg">
                   Veg
                   <input
-                    // checked={values.friendlyFor.veg === 1 ? true : false}
+                    readOnly
                     type="checkbox"
-                    // onChange={(e) => handleInputPref("veg", e)}
                     name="action"
                     id="veg"
+                    checked={user.iam.veg === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -93,13 +100,13 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
 
               <div>
                 <label className={styles.labelContainer} htmlFor="smooker">
-                  Smooker
+                  Smoker
                   <input
-                    // checked={values.friendlyFor.smooker === 1 ? true : false}
-                    // onChange={(e) => handleInputPref("smooker", e)}
+                    readOnly
                     type="checkbox"
                     name="action"
                     id="smooker"
+                    checked={user.iam.smooker === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -109,11 +116,11 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
                 <label className={styles.labelContainer} htmlFor="party">
                   Party lover
                   <input
-                    // checked={values.friendlyFor.party === 1 ? true : false}
-                    // onChange={(e) => handleInputPref("party", e)}
+                    readOnly
                     type="checkbox"
                     name="action"
                     id="party"
+                    checked={user.iam.party_lover === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -121,9 +128,6 @@ const LikesCardInfo = ({ showInfo, setShowInfo }) => {
             </div>
           </section>
         </fieldset>
-        <div>
-          <FiHeart className={styles.icon} />
-        </div>
       </div>
     </div>
   );
