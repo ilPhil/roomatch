@@ -45,8 +45,6 @@ const RoomCard = ({ room }) => {
     if (dir === "right") el.current.style.right = `calc(100% - 1%)`;
     if (dir === "left") el.current.style.right = `0`;
     // if (el.current.style.right > 10) el.current.style.right = `0`;
-
-    console.log(swipe);
   };
   return (
     <div className={styles.main}>

@@ -56,7 +56,7 @@ const UserCard = ({ userInfo }) => {
                 <progress value={compatibility} max="100"></progress>
               </div>
               <div>
-                {user.roomId.ilike.filter((like) => like === userInfo._id).length >
+                {user.roomId.ilike.filter((like) => like.id === userInfo._id).length >
                 0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}
