@@ -5,11 +5,17 @@ import styles from "./Likes.module.scss";
 const Likes = () => {
   const user = useSelector(state => state.user)
 
+  let dataLikes = { data: [], isRoom: 0 };
+
+  dataLikes = user.roomId.roomId !== ''
+    ? { data: user.roomId.wholikesme, isRoom: 0 }
+    : { data: user.wholikesme, isRoom: 1 };
+
   return (
     <div className={styles.main}>
       <div className={styles.cardContainer}>
-        {user.wholikesme.map((user, index) => (
-          <LikesCard key={index} user={user} />
+        {dataLikes.data.map((user, index) => (
+          <LikesCard key={index} user={user} isRoom={dataLikes.isRoom} />
         ))}
       </div>
     </div>
