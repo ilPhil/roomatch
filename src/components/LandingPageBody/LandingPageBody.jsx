@@ -21,18 +21,17 @@ const Body = () => {
           <img src={price} alt="price logo" />
           <h2>A perfect price</h2>
           <p>
-            Create your personal roommate profile and get started in minutes!
-            Get specific with things like pet preferences, room features,
-            neighborhood details, and more.
+            Navigate through a list of available rooms. Following the necessary
+            steps, you'll be able to find the the best solution based upon your
+            actual needs and your current budget.
           </p>
         </div>
         <div className={styles.match}>
           <img src={match} alt="match logo" />
           <h2>A perfect match</h2>
           <p>
-            Create your personal roommate profile and get started in minutes!
-            Get specific with things like pet preferences, room features,
-            neighborhood details, and more.
+            No more roomate horror stories! Find and get in touch only with the
+            people who fits the most your likings.
           </p>
         </div>
       </div>
