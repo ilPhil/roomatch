@@ -30,7 +30,7 @@ const Body = () => {
           <img src={match} alt="match logo" />
           <h2>A perfect match</h2>
           <p>
-            No more roomate horror stories! Find and get in touch only with the
+            No more roommate horror stories! Find and get in touch only with the
             people who fits the most your likings.
           </p>
         </div>
