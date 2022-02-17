@@ -1,14 +1,21 @@
 @import "./../../libs/variables.scss";
+
 .main {
-  height: 100vh;
+  height: 100%;
   background-color: $background;
   overflow-y: auto;
-  padding-bottom: calc(100px + 30px);
+  margin: 0 auto;
+  h3 {
+    display: inline-block;
+    margin: 140px auto auto 15%;
+  }
 
   .cardContainer {
-    padding-top: 10rem;
+    width: 90%;
+    margin: 40px auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     flex-wrap: wrap;
+    padding: 0 0 0 5%;
   }
 }

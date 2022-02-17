@@ -13,21 +13,16 @@ const LikesCard = ({ user, isRoom }) => {
         onClick={() => setShowInfo(!showInfo)}
       >
         <div className={styles.info}>
-          {isRoom
-            ?
+          {isRoom ? (
             <>
-              <p className={styles.name}>
-                {user.roomType} Room
-              </p>
-              <p className={styles.name}>
-                in {user.roomAddress}
-              </p>
+              <p className={styles.name}>{user.roomType} Room</p>
+              <p className={styles.name}>in {user.roomAddress}</p>
             </>
-            :
+          ) : (
             <p className={styles.name}>
               {user.name} {user.surname}
             </p>
-          }
+          )}
           <p className={styles.city}>
             {user.town} ({user.city})
           </p>

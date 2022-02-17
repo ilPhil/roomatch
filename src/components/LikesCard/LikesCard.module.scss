@@ -1,14 +1,15 @@
 @import "./../../libs/variables.scss";
 
 .cardContainer {
-  width: 10rem;
+  min-width: 130px;
   margin: 0.5rem;
-  height: 14rem;
+  height: 180px;
   position: relative;
   margin-bottom: 1.5rem;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  border-radius: $radiusDiv;
 
   .info {
     position: absolute;
