@@ -7,6 +7,15 @@ const LikesCard = ({ user, isRoom }) => {
 
   return (
     <>
+      {showInfo && (
+        <LikesCardInfo
+          user={user}
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          isRoom={isRoom}
+        />
+      )}
+
       <div
         className={styles.cardContainer}
         style={{ backgroundImage: `url(${user.photo})` }}
@@ -28,14 +37,6 @@ const LikesCard = ({ user, isRoom }) => {
           </p>
         </div>
       </div>
-      {showInfo && (
-        <LikesCardInfo
-          user={user}
-          showInfo={showInfo}
-          setShowInfo={setShowInfo}
-          isRoom={isRoom}
-        />
-      )}
     </>
   );
 };

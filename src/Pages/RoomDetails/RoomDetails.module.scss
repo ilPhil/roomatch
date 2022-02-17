@@ -95,17 +95,17 @@
     }
   }
   .gallery {
-    width: 80%;
+    width: 77%;
     margin: 100px auto;
     p {
       margin-bottom: 10px;
     }
   }
   .likes {
-    width: 80%;
-    margin: 0px auto;
-    p {
-      margin-bottom: 30px;
+    .likesTitle {
+      margin: 20px 0 0 30px;
+
+      // margin-bottom: 30px;
     }
     .likesContainer {
       display: flex;

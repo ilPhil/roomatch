@@ -152,7 +152,7 @@ const RoomDetails = () => {
           <PhotoGallery photos={roomDetails.roomPhotos} />
         </div>
         <div className={styles.likes}>
-          <p>Likes</p>
+          <p className={styles.likesTitle}>Likes</p>
           <div className={styles.likesContainer}>
             {roomLikes.map((user, index) => (
               <LikesCard key={index} user={user} />

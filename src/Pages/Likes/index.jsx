@@ -22,7 +22,7 @@ const Likes = () => {
 
   return (
     <div className={styles.main}>
-      <h3>These people like you!</h3>
+      <h3 className={styles.title}>These people like you!</h3>
       <div className={styles.cardContainer}>
         {dataLikes.data.map((user, index) => (
           <LikesCard key={index} user={user} isRoom={dataLikes.isRoom} />
