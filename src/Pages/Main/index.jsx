@@ -9,6 +9,7 @@ import Profile from "../Profile";
 import Users from "../Users";
 import RoomDetails from '../RoomDetails'
 import { useSelector } from "react-redux";
+import NewRoom from '../NewRoom'
 
 const Main = () => {
   const user = useSelector(state => state.user)
@@ -24,6 +25,7 @@ const Main = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/users" element={<Users />} />
         <Route path="/roomdetails" element={<RoomDetails />} />
+        <Route path="/addroom" element={<NewRoom />} />
       </Routes>
       <MainNav />
     </div>

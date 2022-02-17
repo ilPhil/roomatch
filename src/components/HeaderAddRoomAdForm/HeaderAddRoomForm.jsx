@@ -1,23 +1,22 @@
 import { Link } from "react-router-dom";
 import { IoIosCloseCircle } from "react-icons/io";
-import styles from "./HeaderForms.module.scss";
+import styles from "./HeaderAddRoomForm.module.scss";
 import { useState, useEffect } from "react";
 
-const HeaderForms = ({ step }) => {
-  //   const stepTitle = props.stepTitle || "Create your profile";
+const HeaderAddRoomForm = ({ step }) => {
   const logo = "ROOMATCH";
   const [title, setTitle] = useState("");
 
   useEffect(() => {
     switch (step) {
       case 1:
-        setTitle("Create profile");
+        setTitle("Room Info");
         break;
       case 2:
-        setTitle("What roomate are you?");
+        setTitle("Roomate Info");
         break;
       case 3:
-        setTitle("Your info");
+        setTitle("Room Pics");
         break;
       default:
         setTitle("Login");
@@ -27,7 +26,7 @@ const HeaderForms = ({ step }) => {
   return (
     <>
       <h1 className={styles.logo}>{logo}</h1>
-      <p className={styles.stepText}>{title}</p>
+          <p className={styles.stepText}>{title}</p>
       {step && (
         <>
           <div className={styles.stepperWrapper}>
@@ -51,4 +50,4 @@ const HeaderForms = ({ step }) => {
     </>
   );
 };
-export default HeaderForms;
+export default HeaderAddRoomForm;
