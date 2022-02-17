@@ -1,15 +1,21 @@
 import LikesCard from "../../components/LikesCard";
 import { useSelector } from "react-redux";
 import styles from "./Likes.module.scss";
+import { useState, useEffect } from "react";
+import { httpGET } from "../../libs/http";
 
 const Likes = () => {
   const user = useSelector(state => state.user)
 
-  let dataLikes = { data: [], isRoom: 0 };
+  const [dataRoomLikes, setDataRoomLikes] = useState({ data: [], isRoom: 0 });
 
-  dataLikes = user.roomId.roomId !== ''
-    ? { data: user.roomId.wholikesme, isRoom: 0 }
-    : { data: user.wholikesme, isRoom: 1 };
+  useEffect(() => {
+    httpGET(`/users/${user._id}/wholikesmyroom`).then((data) => {
+      setDataRoomLikes({ data: data, isRoom: 0 }); // sono persone interessate alla stanza roomId
+    })
+  }, [user]);
+
+  const dataLikes = user.roomId.roomId !== '' ? dataRoomLikes : { data: user.wholikesme, isRoom: 1 };
 
   return (
     <div className={styles.main}>
