@@ -4,11 +4,38 @@
 import styles from "./LikesCardInfo.module.scss";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
-// import { FaHeart } from "react-icons/fa";
+import { likeDislike, peoplelikeDislike } from "../../store/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 const LikesCardInfo = ({ user, showInfo, setShowInfo, isRoom }) => {
+  const dispatch = useDispatch();
+  const loading = useSelector((store) => store.loading);
+  const loggedUser = useSelector((store) => store.user);
 
   const dataDetails = isRoom ? user.friendlyWith : user.iam;
+  const data = user;
+  console.log("data: ", data)
+
+  const likeFunc = () => {
+    dispatch(isRoom
+      ? likeDislike(
+        {
+          userId: loggedUser._id,
+          ilike: data.roomId,
+        },
+        data.roomId,
+        "addlike"
+      )
+      : peoplelikeDislike(
+        {
+          roomId: loggedUser.roomId.roomId,
+          roomilike: data.id,
+        },
+        data.id,
+        "addlike"
+      )
+    );
+  };
 
   return (
     <div className={styles.background}>
@@ -27,8 +54,27 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo, isRoom }) => {
               {user.town} ({user.city})
             </p>
           </div>
-          <div className={styles.likeBtn}>
+          {/* <div className={styles.likeBtn}>
             <FiHeart className={styles.icon} />
+          </div> */}
+
+          <div className={styles.likeBtn}>
+            <FiHeart
+              onClick={() => !loading && likeFunc()}
+              className={`${styles.outlineHeart} ${styles.icon}`}
+            />
+            {/* {loggedUser.ilike.filter((like) => like.roomId === data._id).length >
+              0 ? (
+              <FaHeart
+                onClick={() => !loading && dislikeFunc()}
+                className={`${styles.fillHeart} ${styles.icon}`}
+              />
+            ) : (
+              <FiHeart
+                onClick={() => !loading && likeFunc()}
+                className={`${styles.outlineHeart} ${styles.icon}`}
+              />
+            )} */}
           </div>
         </div>
 
