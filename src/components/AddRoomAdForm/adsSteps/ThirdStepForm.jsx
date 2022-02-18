@@ -1,17 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { useState, useEffect } from "react";
 import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 import styles from "./ThirdStepForm.module.scss";
-import { httpPOST } from "../../../libs/http";
+import { newRoom } from "../../../store/actions";
+// import { httpPOST } from "../../../libs/http";
 
 const ThirdStepForm = ({ formData, prevStep }) => {
   let url = useNavigate();
+  const [redirect, setRedirect] = useState('/addroom')
+  const dispatch = useDispatch()
 
   const formSubmit = () => {
-    httpPOST("/rooms", formData).then((data) => {
-      console.log(data);
-      url("/profile");
-    });
+    dispatch(
+      newRoom(formData, setRedirect)
+    );
   };
+
+  useEffect(()=> {
+    url(redirect)
+}, [url, redirect])
 
   return (
     <div className={styles.containerForm}>
