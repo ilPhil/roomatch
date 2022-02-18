@@ -7,10 +7,10 @@ const ThirdStepForm = ({ formData, prevStep }) => {
   let url = useNavigate();
 
   const formSubmit = () => {
-    httpPOST('/rooms', formData).then((data) => { 
+    httpPOST("/rooms", formData).then((data) => {
       console.log(data);
-      url('/profile')
-    })
+      url("/profile");
+    });
   };
 
   return (
@@ -136,7 +136,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                   type="checkbox"
                   name="action"
                   id="lgbtq"
-                  checked={formData.friendlyWith.lgbtq === '1' ? true : false}
+                  checked={formData.friendlyWith.lgbtq === "1" ? true : false}
                   readOnly
                 />
                 <span className={styles.mark}></span>
@@ -147,7 +147,9 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="pet_owner">
                 Pet owner
                 <input
-                  checked={formData.friendlyWith.pet_owner === '1' ? true : false}
+                  checked={
+                    formData.friendlyWith.pet_owner === "1" ? true : false
+                  }
                   readOnly
                   type="checkbox"
                   name="action"
@@ -161,7 +163,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                 Multicultural
                 <input
                   checked={
-                    formData.friendlyWith.multicultural === '1' ? true : false
+                    formData.friendlyWith.multicultural === "1" ? true : false
                   }
                   readOnly
                   type="checkbox"
@@ -178,7 +180,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="veg">
                 Veg
                 <input
-                  checked={formData.friendlyWith.veg === '1' ? true : false}
+                  checked={formData.friendlyWith.veg === "1" ? true : false}
                   type="checkbox"
                   readOnly
                   name="action"
@@ -192,7 +194,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="smooker">
                 Smooker
                 <input
-                  checked={formData.friendlyWith.smooker === '1' ? true : false}
+                  checked={formData.friendlyWith.smooker === "1" ? true : false}
                   readOnly
                   type="checkbox"
                   name="action"
@@ -206,7 +208,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="party">
                 Party lover
                 <input
-                  checked={formData.friendlyWith.party === '1' ? true : false}
+                  checked={formData.friendlyWith.party === "1" ? true : false}
                   type="checkbox"
                   name="action"
                   id="party"
