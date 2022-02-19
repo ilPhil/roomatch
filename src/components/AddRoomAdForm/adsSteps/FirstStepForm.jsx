@@ -23,7 +23,9 @@ const FirstStepForm = ({
       <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
         <div className={styles.rentType}>
           <div className={styles.rent}>
-            <label htmlFor="rentPrice">Monthly Rent</label>
+            <label className={styles.label} htmlFor="rentPrice">
+              Monthly Rent
+            </label>
             <input
               value={values.rentPrice}
               onChange={handleFormData("rentPrice")}
@@ -31,6 +33,7 @@ const FirstStepForm = ({
               id="rentPrice"
               type="number"
               placeholder="price/month"
+              min={1}
               required
             />
             <span>,00 €/month</span>

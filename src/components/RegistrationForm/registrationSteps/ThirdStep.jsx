@@ -23,7 +23,7 @@ const ThirdStep = ({ values, prevStep }) => {
   }, [url, redirect]);
 
   return (
-    <>
+    <div className={styles.containerForm}>
       <div className={styles.container}>
         <div
           className={styles.img}
@@ -141,7 +141,7 @@ const ThirdStep = ({ values, prevStep }) => {
           Go!
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
