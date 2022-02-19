@@ -5,10 +5,15 @@ form {
     font-size: $labelSize;
     font-weight: bold;
   }
-
+  .selectorLabel {
+    color: darken($mainLightBlue, 8);
+    font-size: $labelSize;
+    font-weight: bold;
+    margin: 15px 0 5px;
+  }
   input {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $mainLightBlue;
     margin-bottom: 0.8rem;
     &::placeholder {
       font-size: $labelSize;
@@ -30,7 +35,7 @@ select {
 .age,
 .gender,
 .city {
-  margin-top: 2rem;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -44,8 +49,9 @@ select {
   border-radius: 0.8rem;
   padding: 1rem;
   margin-top: 1rem;
+  color: darken($mainLightBlue, 8);
   legend {
-    font-weight: 500;
+    font-weight: 900;
   }
   section {
     display: flex;
@@ -94,18 +100,25 @@ select {
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: 1.5rem;
+  top: 105%;
   right: $sidePadding;
-  color: $mainLightBlue;
+  color: $mainPink;
   font-size: 2rem;
+  .icon {
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .prevStep {
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: 1.5rem;
+  top: 105%;
   left: $sidePadding;
   color: $mainLightBlue;
   font-size: 2rem;
+  .icon {
+    border-radius: 50px;
+  }
 }

@@ -22,7 +22,7 @@
   }
 }
 
-.error{
+.error {
   text-align: center;
   margin-top: 20px;
   color: $mainPink;
@@ -32,9 +32,10 @@
   border: 2px solid $mainLightBlue;
   border-radius: 0.8rem;
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 80px;
+  color: darken($mainLightBlue, 8);
   legend {
-    font-weight: 500;
+    font-weight: 900;
   }
   section {
     display: flex;
@@ -97,12 +98,25 @@
     height: 40px;
     background-color: $mainPink;
     position: absolute;
-    bottom: 1.3rem;
     right: $sidePadding;
     color: #fff;
     font-size: 1rem;
     border-radius: 50%;
     font-weight: bold;
+    top: 89%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   }
-  
+
+  .prevStep {
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
+    position: absolute;
+    top: 90%;
+    left: $sidePadding;
+    color: $mainLightBlue;
+    font-size: 2rem;
+    .icon {
+      border-radius: 50px;
+    }
+  }
 }

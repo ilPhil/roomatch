@@ -137,10 +137,7 @@ const ThirdStep = ({ values, prevStep }) => {
         <button className={styles.prevStep} onClick={prevStep}>
           <BsArrowLeftCircle />
         </button>
-        <button
-          className={styles.nextStep}
-          onClick={() => hadleConfirm()}
-        >
+        <button className={styles.nextStep} onClick={() => hadleConfirm()}>
           Go!
         </button>
       </div>

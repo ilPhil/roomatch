@@ -1,19 +1,9 @@
 @import "./../../../libs/variables.scss";
 
-.nextStep {
-  border: none;
-  background-color: rgba(80, 80, 80, 0);
-  position: absolute;
-  bottom: 1.5rem;
-  right: $sidePadding;
-  color: $mainLightBlue;
-  font-size: 2rem;
-}
-
 .flexForm {
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
+  padding-bottom: 80px;
 
   .img {
     width: 100px;
@@ -23,8 +13,8 @@
     background-size: cover;
     position: relative;
     margin-bottom: 20px;
-    
-    .uploadBtn{
+
+    .uploadBtn {
       position: absolute;
       background-color: $mainLightBlue;
       width: 20px;
@@ -37,22 +27,39 @@
       right: 5px;
     }
   }
-  .hidden{
-   display: none;
-   } 
+  .hidden {
+    display: none;
+  }
 
   label {
+    color: darken($mainLightBlue, 8);
     font-size: $labelSize;
     font-weight: bold;
-    margin: 0.8rem 0 0.3rem;
+    margin: 15px 0 5px;
   }
 
   input {
+    height: 30px;
     border: none;
-    border-bottom: 2px solid black;
-    margin-bottom: 0.8rem;
+    border-bottom: 2px solid $mainLightBlue;
+    padding-top: 8px;
     &::placeholder {
+      color: darken($mainLightBlue, 8);
       font-size: $labelSize;
+    }
+  }
+
+  .nextStep {
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
+    position: absolute;
+    top: 105%;
+    right: $sidePadding;
+    color: $mainPink;
+    font-size: 2rem;
+    .icon {
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
   }
 }

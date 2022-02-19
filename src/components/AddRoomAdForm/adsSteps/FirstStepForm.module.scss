@@ -1,6 +1,6 @@
 @import "./../../../libs/variables.scss";
 
-.main{
+.main {
   padding-bottom: 100px;
   .containerForm {
     width: 100vw;
@@ -8,19 +8,19 @@
     margin: 0 auto;
     padding: 0 $sidePadding;
     // position: relative;
-    .rent{
+    .rent {
       input {
         margin-left: 10px;
         width: 40px;
         text-align: right;
       }
-      span{
+      span {
         color: #ccc;
         font-size: 14px;
         margin-left: 5px;
       }
     }
-  
+
     .roomType {
       display: flex;
       flex-direction: column;
@@ -51,14 +51,14 @@
       align-items: center;
     }
   }
-  .city{
+  .city {
     display: flex;
     flex-direction: column;
-    select{
+    select {
       margin-top: 10px;
     }
   }
-  
+
   .address {
     margin: 20px 10px 0 0;
     input {
@@ -68,7 +68,7 @@
       }
     }
   }
-  
+
   // Style checkbox
   .labelContainer {
     display: block;
@@ -78,13 +78,13 @@
     cursor: pointer;
     font-size: $labelSize;
   }
-  
+
   // Hide the default checkbox
   .labelContainer input {
     visibility: hidden;
     cursor: pointer;
   }
-  
+
   // Create new checkbox
   .mark {
     position: absolute;
@@ -99,7 +99,7 @@
     background-color: $mainLightBlue;
   }
   // end checkbox style
-  
+
   .nextStep {
     border: none;
     background-color: rgba(80, 80, 80, 0);
@@ -110,7 +110,7 @@
     font-size: 2rem;
     .icon {
       border-radius: 50px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.612);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
   }
 }

@@ -15,9 +15,9 @@
   z-index: 2;
 }
 
-h1 {
+.logo {
+  color: $background;
   font-family: $titleFont;
   font-size: 1rem;
-  color: $background;
   margin: $topMargin 2rem;
 }
