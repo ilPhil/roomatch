@@ -1,7 +1,6 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  // border: 1px solid red;
   background: linear-gradient(
     180deg,
     #74004d 0%,
@@ -11,7 +10,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  height: 100px;
+  height: 90px;
   z-index: 2;
 }
 

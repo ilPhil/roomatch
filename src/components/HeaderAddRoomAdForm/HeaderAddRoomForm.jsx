@@ -22,9 +22,7 @@ const HeaderAddRoomForm = ({ step }) => {
   }, [step]);
 
   return (
-    <>
-      <h1 className={styles.logo}>{logo}</h1>
-          <p className={styles.stepText}>{title}</p>
+    <div className={styles.main}>
       {step && (
         <>
           <div className={styles.stepperWrapper}>
@@ -40,7 +38,7 @@ const HeaderAddRoomForm = ({ step }) => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 export default HeaderAddRoomForm;

@@ -1,17 +1,19 @@
 @import "./../../../libs/variables.scss";
 
 .main {
-  padding-bottom: 100px;
-  .containerForm {
+  color: darken($mainLightBlue, 8);
+  height: 100%;
+  padding-bottom: 75px;
+  .flexForm {
     width: 100vw;
-    // height: 100vh;
     margin: 0 auto;
     padding: 0 $sidePadding;
-    // position: relative;
     .rent {
+      margin: 20px 0;
       input {
+        height: 30px;
         margin-left: 10px;
-        width: 40px;
+        width: 50px;
         text-align: right;
       }
       span {
@@ -21,9 +23,10 @@
       }
     }
 
-    .roomType {
+    .rentType {
       display: flex;
       flex-direction: column;
+
       label {
         margin-bottom: 5px;
       }
@@ -31,36 +34,49 @@
     fieldset {
       border: 2px solid $mainLightBlue;
       border-radius: 0.8rem;
-      padding: 1rem;
-      margin: 20px auto;
+      padding: 0.8rem;
+      margin: 50px auto;
       legend {
-        font-weight: 500;
+        font-weight: bold;
+        font-size: $superSmall;
       }
       section {
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      input {
-        width: 15px;
-      }
     }
     .flexColumn {
       flex-direction: column;
       margin: 0 1rem;
       align-items: center;
+      .flatInput {
+        width: 20px;
+        height: 30px;
+        padding: 10px 0 0 5px;
+      }
+    }
+    .flexColumn2 {
+      margin: 15px 0 0 10px;
+    }
+    .labelIcon {
+      margin-left: 8px;
+      .icon {
+        font-size: 20px;
+      }
     }
   }
   .city {
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
     select {
       margin-top: 10px;
     }
   }
 
   .address {
-    margin: 20px 10px 0 0;
+    margin: 20px 0 15px 0;
     input {
       margin-left: 10px;
       &::placeholder {
@@ -74,7 +90,7 @@
     display: block;
     position: relative;
     padding-left: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     cursor: pointer;
     font-size: $labelSize;
   }
@@ -104,7 +120,7 @@
     border: none;
     background-color: rgba(80, 80, 80, 0);
     position: absolute;
-    bottom: 100px;
+    top: 150%;
     right: $sidePadding;
     color: $mainPink;
     font-size: 2rem;

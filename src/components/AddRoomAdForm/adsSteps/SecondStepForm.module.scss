@@ -1,36 +1,34 @@
 @import "./../../../libs/variables.scss";
 
 .containerForm {
+  color: darken($mainLightBlue, 13);
   width: 100vw;
   margin: 0 auto;
   padding: 0 $sidePadding;
-  .roommates{
+  .roommates {
     margin-top: 20px;
-    .roommatesWrapper{
+    .roommatesWrapper {
       margin-top: 10px;
       display: flex;
-      input{
-        width: 20px;
+      align-items: center;
+      input {
+        width: 30px;
+        height: 30px;
         margin: 0 20px 0 5px;
         text-align: center;
       }
     }
   }
 
-  label {
-    font-size: $labelSize;
-    font-weight: bold;
-  }
-
   input {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid darken($mainLightBlue, 13);
     margin-bottom: 0.8rem;
     &::placeholder {
       font-size: $labelSize;
     }
   }
-  .imagesWrapper{
+  .imagesWrapper {
     margin-top: 20px;
     img {
       object-fit: cover;
@@ -53,7 +51,7 @@
         text-align: center;
         line-height: 100px;
       }
-    
+
       .hidden {
         display: none;
       }
@@ -71,7 +69,7 @@ select {
   padding: 0.5em 3.5em 0.5em 1em;
   color: darken($mainLightBlue, 20);
   margin-left: 10px;
-  
+
   .gender {
     margin-top: 2rem;
     display: flex;
@@ -79,14 +77,14 @@ select {
   }
 }
 
-
 .fieldset {
+  width: 200px;
   border: 2px solid $mainLightBlue;
   border-radius: 0.8rem;
-  padding: 1rem;
-  margin: 40px 0;
+  margin: 40px auto;
   legend {
-    font-weight: 500;
+    font-weight: bold;
+    font-size: $superSmall;
   }
 
   section {
