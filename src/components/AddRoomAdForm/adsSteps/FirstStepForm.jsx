@@ -27,6 +27,7 @@ const FirstStepForm = ({
               Monthly Rent
             </label>
             <input
+              className={styles.rentInput}
               value={values.rentPrice}
               onChange={handleFormData("rentPrice")}
               name="rent"
@@ -39,8 +40,11 @@ const FirstStepForm = ({
             <span>,00 €/month</span>
           </div>
           <div className={styles.roomType}>
-            <label htmlFor="roomtype">Room type*</label>
+            <label className={styles.label} htmlFor="roomtype">
+              Room type*
+            </label>
             <select
+              className={styles.select}
               onChange={handleFormData("roomType")}
               name="roomType"
               id="roomType"
@@ -54,13 +58,15 @@ const FirstStepForm = ({
           </div>
         </div>
         <div className={styles.city}>
-          <label htmlFor="City">City*</label>
+          <label className={styles.label} htmlFor="City">
+            City*
+          </label>
           <CitiesSelector
             handleInputCities={handleInputCities}
             values={values}
           />
         </div>
-        <fieldset>
+        <fieldset className={styles.fieldset}>
           <legend>About the flat</legend>
           <section>
             <div className={styles.flexColumn}>
@@ -158,8 +164,11 @@ const FirstStepForm = ({
         </fieldset>
 
         <div className={styles.address}>
-          <label htmlFor="address">Address</label>
+          <label className={styles.label} htmlFor="address">
+            Address
+          </label>
           <input
+            className={styles.adressInput}
             value={values.roomAddress}
             onChange={handleFormData("roomAddress")}
             name="roomAddress"

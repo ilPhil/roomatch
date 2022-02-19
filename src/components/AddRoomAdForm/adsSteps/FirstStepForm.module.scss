@@ -4,17 +4,40 @@
   color: darken($mainLightBlue, 8);
   height: 100%;
   padding-bottom: 75px;
+  .select {
+    background-color: white;
+    border: 2px solid $mainLightBlue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    font-size: $labelSize;
+    color: darken($mainLightBlue, 20);
+  }
   .flexForm {
     width: 100vw;
     margin: 0 auto;
     padding: 0 $sidePadding;
+    .label {
+      font-size: $superSmall;
+      margin: 40px 0 5px 0;
+    }
     .rent {
-      margin: 20px 0;
-      input {
+      margin: 20px 0 0;
+      .rentInput {
         height: 30px;
-        margin-left: 10px;
         width: 50px;
+        margin-left: 10px;
         text-align: right;
+
+        border: none;
+        border-bottom: 2px solid $mainLightBlue;
+        padding-top: 8px;
+        &::placeholder {
+          color: darken($mainLightBlue, 8);
+          font-size: $labelSize;
+        }
       }
       span {
         color: #ccc;
@@ -26,19 +49,21 @@
     .rentType {
       display: flex;
       flex-direction: column;
-
-      label {
-        margin-bottom: 5px;
-      }
     }
-    fieldset {
+    .roomType {
+      display: flex;
+      flex-direction: column;
+    }
+    .fieldset {
       border: 2px solid $mainLightBlue;
       border-radius: 0.8rem;
-      padding: 0.8rem;
+      padding: 0.6rem 0;
+      // width: 250px;
       margin: 50px auto;
       legend {
         font-weight: bold;
         font-size: $superSmall;
+        margin-left: 10px;
       }
       section {
         display: flex;
@@ -51,9 +76,17 @@
       margin: 0 1rem;
       align-items: center;
       .flatInput {
-        width: 20px;
         height: 30px;
-        padding: 10px 0 0 5px;
+        width: 30px;
+        margin-left: 10px;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid $mainLightBlue;
+        padding-top: 8px;
+        &::placeholder {
+          color: darken($mainLightBlue, 8);
+          font-size: $labelSize;
+        }
       }
     }
     .flexColumn2 {
@@ -69,18 +102,19 @@
   .city {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
-    select {
-      margin-top: 10px;
-    }
   }
 
   .address {
     margin: 20px 0 15px 0;
-    input {
+    .adressInput {
+      text-align: center;
       margin-left: 10px;
+      border: none;
+      border-bottom: 2px solid $mainLightBlue;
+      padding-top: 8px;
       &::placeholder {
-        padding-left: 8px;
+        color: darken($mainLightBlue, 8);
+        font-size: $labelSize;
       }
     }
   }

@@ -2,9 +2,8 @@
 
 .containerForm {
   color: darken($mainLightBlue, 13);
-  width: 100vw;
+  width: 260px;
   margin: 0 auto;
-  padding: 0 $sidePadding;
   .roommates {
     margin-top: 20px;
     .roommatesWrapper {
@@ -126,7 +125,7 @@
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: 20px;
+  bottom: -30px;
   right: $sidePadding;
   color: $mainPink;
   font-size: 2rem;
@@ -139,7 +138,7 @@
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: 20px;
+  bottom: -30px;
   left: $sidePadding;
   color: $mainPink;
   font-size: 2rem;
