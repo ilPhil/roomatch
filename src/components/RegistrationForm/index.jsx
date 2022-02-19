@@ -62,7 +62,6 @@ const RegistrationForm = () => {
   };
 
   const handleInputPref = (input, e) => {
-    // console.log(input, e.target.checked)
     setFormData({
       ...formData,
       iam: { ...formData.iam, [input]: e.target.checked ? 1 : 0 },
