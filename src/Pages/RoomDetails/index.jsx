@@ -61,13 +61,13 @@ const RoomDetails = () => {
         className={styles.header}
         style={{ backgroundImage: `url(${roomDetails.roomPhotos[0]})` }}
       ></div>
-      <p className={styles.roommatesTitle}>Roommates: 
-      <span><AiOutlineMan />{roomDetails.roommates.males}</span>
-      <span><AiOutlineWoman />{roomDetails.roommates.females}</span>
-      <span><RiRainbowLine />{roomDetails.roommates.others}</span>  
+      <p className={styles.roommatesTitle}>Roommates:
+        <span><AiOutlineMan />{roomDetails.roommates.males}</span>
+        <span><AiOutlineWoman />{roomDetails.roommates.females}</span>
+        <span><RiRainbowLine />{roomDetails.roommates.others}</span>
       </p>
-      
-  
+
+
       <p className={styles.charTitle}>Friendly With</p>
       <div className={styles.charSet}>
         <div className={styles.char}>
@@ -109,12 +109,12 @@ const RoomDetails = () => {
       </div>
       <div className={styles.gallery}>
         <p className={styles.charTitle}>Gallery</p>
-        <PhotoGallery photos={roomDetails.roomPhotos}/>
+        <PhotoGallery photos={roomDetails.roomPhotos} />
       </div>
       <div className={styles.likes}>
         <p className={styles.charTitle}>Likes</p>
         {roomLikes.map((user, index) => (
-          <LikesCard key={index} user={user} />
+          user => user.room?.roomId === '' ? <LikesCard key={index} user={user} /> : null
         ))}
       </div>
     </div>
