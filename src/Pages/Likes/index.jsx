@@ -4,7 +4,7 @@ import styles from "./Likes.module.scss";
 import { useState, useEffect } from "react";
 
 const Likes = () => {
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
 
   const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });
 
@@ -16,6 +16,7 @@ const Likes = () => {
 
   return (
     <div className={styles.main}>
+      <h3 className={styles.title}>These people like you!</h3>
       <div className={styles.cardContainer}>
         {dataLikes.data.map((user, index) => (
           <LikesCard key={index} user={user} isRoom={dataLikes.isRoom} />

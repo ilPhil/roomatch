@@ -5,13 +5,16 @@ import styles from "./ThirdStep.module.scss";
 import { BsArrowLeftCircle } from "react-icons/bs";
 
 const ThirdStep = ({ values, prevStep }) => {
+  const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("/registration");
   let url = useNavigate();
   const { name, surname, age, city, gender, town, photo } = values;
 
-  const hadleConfirm = (data) => {
-    httpPOST("/users", data).then((data) => {
-      setRedirect("/");
+  const hadleConfirm = () => {
+    httpPOST("/users", values).then((data) => {
+      data.message === "email already present in our system"
+        ? setMessage(data.message)
+        : setRedirect("/");
     });
   };
 
@@ -20,7 +23,7 @@ const ThirdStep = ({ values, prevStep }) => {
   }, [url, redirect]);
 
   return (
-    <>
+    <div className={styles.containerForm}>
       <div className={styles.container}>
         <div
           className={styles.img}
@@ -114,14 +117,14 @@ const ThirdStep = ({ values, prevStep }) => {
             </div>
 
             <div>
-              <label className={styles.labelContainer} htmlFor="party">
+              <label className={styles.labelContainer} htmlFor="party_lover">
                 Party lover
                 <input
                   readOnly
                   type="checkbox"
                   name="action"
-                  id="party"
-                  checked={values.iam.party === 1 ? true : false}
+                  id="party_lover"
+                  checked={values.iam.party_lover === 1 ? true : false}
                 />
                 <span className={styles.mark}></span>
               </label>
@@ -129,19 +132,16 @@ const ThirdStep = ({ values, prevStep }) => {
           </div>
         </section>
       </fieldset>
-
+      {message && <p className={styles.error}>{message}</p>}
       <div className={styles.btnSet}>
         <button className={styles.prevStep} onClick={prevStep}>
           <BsArrowLeftCircle />
         </button>
-        <button
-          className={styles.nextStep}
-          onClick={() => hadleConfirm(values)}
-        >
+        <button className={styles.nextStep} onClick={() => hadleConfirm()}>
           Go!
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

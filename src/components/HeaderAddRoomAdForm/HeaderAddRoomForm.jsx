@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
-import { IoIosCloseCircle } from "react-icons/io";
 import styles from "./HeaderAddRoomForm.module.scss";
 import { useState, useEffect } from "react";
 
 const HeaderAddRoomForm = ({ step }) => {
-  const logo = "ROOMATCH";
   const [title, setTitle] = useState("");
 
   useEffect(() => {
@@ -13,20 +10,22 @@ const HeaderAddRoomForm = ({ step }) => {
         setTitle("Room Info");
         break;
       case 2:
-        setTitle("Roomate Info");
+        setTitle("Roomate Info & Photos");
+
         break;
       case 3:
-        setTitle("Room Pics");
+        setTitle("Summary");
         break;
+
       default:
         setTitle("Login");
     }
   }, [step]);
 
   return (
-    <>
-      <h1 className={styles.logo}>{logo}</h1>
-          <p className={styles.stepText}>{title}</p>
+    <div className={styles.main}>
+      <p className={styles.stepText}>{title}</p>
+
       {step && (
         <>
           <div className={styles.stepperWrapper}>
@@ -42,12 +41,7 @@ const HeaderAddRoomForm = ({ step }) => {
           </div>
         </>
       )}
-      <div>
-        <Link className={styles.closeBtn} to="/">
-          <IoIosCloseCircle />
-        </Link>
-      </div>
-    </>
+    </div>
   );
 };
 export default HeaderAddRoomForm;
