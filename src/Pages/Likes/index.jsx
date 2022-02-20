@@ -14,12 +14,14 @@ const Likes = () => {
       : setDataLikes({ data: user.wholikesme, isRoom: 1 });
   }, [user.roomId.roomId, user.roomId.wholikesme, user.wholikesme]);
 
+  console.log(user)
+  console.log("dataLikes ", dataLikes)
   return (
     <div className={styles.main}>
       <h3 className={styles.title}>These people like you!</h3>
       <div className={styles.cardContainer}>
-        {dataLikes.data.map((user, index) => (
-          <LikesCard key={index} user={user} isRoom={dataLikes.isRoom} />
+        {dataLikes.data.map((currentData, index) => (
+          <LikesCard key={index} data={currentData} isRoom={dataLikes.isRoom} />
         ))}
       </div>
     </div>
