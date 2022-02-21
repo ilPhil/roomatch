@@ -1,6 +1,10 @@
 import styles from "./LikesCardInfo.module.scss";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
+import { AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
+import { RiRainbowLine } from "react-icons/ri";
+import { BsWifi, BsSnow, BsCash } from "react-icons/bs";
+
 import { likeDislike, peoplelikeDislike } from "../../store/actions";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -47,7 +51,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
                 type="checkbox"
                 name="action"
                 id="lgbtq"
-                checked={currentItemDetails.lgbtq === 1 ? true : false}
+                checked={parseInt(currentItemDetails.lgbtq) === 1 ? true : false}
               />
               <span className={styles.mark}></span>
             </label>
@@ -59,7 +63,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
                 readOnly
                 type="checkbox"
                 name="action"
-                checked={currentItemDetails.pet_owner === 1 ? true : false}
+                checked={parseInt(currentItemDetails.pet_owner) === 1 ? true : false}
                 id="pet_owner"
               />
               <span className={styles.mark}></span>
@@ -76,7 +80,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
                 type="checkbox"
                 name="action"
                 id="multicultural"
-                checked={currentItemDetails.multicultural === 1 ? true : false}
+                checked={parseInt(currentItemDetails.multicultural) === 1 ? true : false}
               />
               <span className={styles.mark}></span>
             </label>
@@ -91,7 +95,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
                 type="checkbox"
                 name="action"
                 id="veg"
-                checked={currentItemDetails.veg === 1 ? true : false}
+                checked={parseInt(currentItemDetails.veg) === 1 ? true : false}
               />
               <span className={styles.mark}></span>
             </label>
@@ -104,7 +108,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
                 type="checkbox"
                 name="action"
                 id="smooker"
-                checked={currentItemDetails.smooker === 1 ? true : false}
+                checked={parseInt(currentItemDetails.smooker) === 1 ? true : false}
               />
               <span className={styles.mark}></span>
             </label>
@@ -118,7 +122,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
                 type="checkbox"
                 name="action"
                 id="party"
-                checked={currentItemDetails.party_lover === 1 ? true : false}
+                checked={parseInt(currentItemDetails.party_lover) === 1 ? true : false}
               />
               <span className={styles.mark}></span>
             </label>
@@ -133,7 +137,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
       <div className={styles.flexHeaderInfo}>
         <div className={styles.headerInfo}>
           <h3>
-            {data.roomType} room
+            {data.roomType} Room
           </h3>
           <div className={styles.subHeader}>
             <p>in {data.roomAddress}</p>
@@ -141,6 +145,9 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
               {data.town} ({data.city})
             </p>
           </div>
+          <h4>
+            Price: {data.rentPrice} Euro
+          </h4>
         </div>
 
         <div className={styles.likeBtn}>
@@ -151,7 +158,171 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
         </div>
       </div>
       {genericDetails()}
+      {aboutTheFlat()}
     </>
+  );
+
+  const aboutTheFlat = () => (
+    <fieldset className={styles.fieldset}>
+      <legend>About the flat</legend>
+
+      {/* Number of roommates in flat */}
+      <p className={styles.roommatesTitle}>
+        Roommates:
+        <span>
+          <AiOutlineMan />
+          {currentItem.roommates.males}
+        </span>
+        <span>
+          <AiOutlineWoman />
+          {currentItem.roommates.females}
+        </span>
+        <span>
+          <RiRainbowLine />
+          {currentItem.roommates.others}
+        </span>
+      </p>
+
+
+      <section>
+        {/* Conforts */}
+        <div className={styles.flexColumn}>
+          <div className={styles.char}>
+            <span
+              className={currentItem.aboutFlat.airCond ? styles.active : ""}>
+              <BsSnow />
+            </span>
+            Air Conditioning
+          </div>
+
+          <div className={styles.char}>
+            <span
+              className={currentItem.aboutFlat.billsInc ? styles.active : ""}>
+              <BsCash />
+            </span>
+            Bills included
+          </div>
+
+          <div className={styles.char}>
+            <span
+              className={currentItem.aboutFlat.wifi ? styles.active : ""}>
+              <BsWifi />
+            </span>
+            Wi-Fi
+          </div>
+
+          {/* Number of rooms */}
+          <div className={styles.char}>
+            <p className={styles.charNum}>{currentItem.aboutFlat.bedrooms}</p>
+            Bedrooms
+          </div>
+          <div className={styles.char}>
+            <p className={styles.charNum}>{currentItem.aboutFlat.bathrooms}</p>
+            Bathrooms
+          </div>
+
+          <div className={styles.char}>
+            <p className={styles.charNum}>{currentItem.aboutFlat.kitchen}</p>
+            Kitchen
+          </div>
+        </div>
+
+      </section>
+    </fieldset>
+  );
+
+  const aboutThePerson = () => (
+    <fieldset className={styles.fieldset}>
+      <legend>About me</legend>
+      <section>
+        <div className={styles.flexColumn}>
+          <div>
+            <label className={styles.labelContainer} htmlFor="lgbtq">
+              LGBTQ+
+              <input
+                readOnly
+                type="checkbox"
+                name="action"
+                id="lgbtq"
+                checked={parseInt(currentItemDetails.lgbtq) === 1 ? true : false}
+              />
+              <span className={styles.mark}></span>
+            </label>
+          </div>
+          <div>
+            <label className={styles.labelContainer} htmlFor="pet_owner">
+              Pet owner
+              <input
+                readOnly
+                type="checkbox"
+                name="action"
+                checked={parseInt(currentItemDetails.pet_owner) === 1 ? true : false}
+                id="pet_owner"
+              />
+              <span className={styles.mark}></span>
+            </label>
+          </div>
+          <div>
+            <label
+              className={styles.labelContainer}
+              htmlFor="multicultural"
+            >
+              Multicultural
+              <input
+                readOnly
+                type="checkbox"
+                name="action"
+                id="multicultural"
+                checked={parseInt(currentItemDetails.multicultural) === 1 ? true : false}
+              />
+              <span className={styles.mark}></span>
+            </label>
+          </div>
+        </div>
+        <div className={styles.flexColumn}>
+          <div>
+            <label className={styles.labelContainer} htmlFor="veg">
+              Veg
+              <input
+                readOnly
+                type="checkbox"
+                name="action"
+                id="veg"
+                checked={parseInt(currentItemDetails.veg) === 1 ? true : false}
+              />
+              <span className={styles.mark}></span>
+            </label>
+          </div>
+          <div>
+            <label className={styles.labelContainer} htmlFor="smooker">
+              Smoker
+              <input
+                readOnly
+                type="checkbox"
+                name="action"
+                id="smooker"
+                checked={parseInt(currentItemDetails.smooker) === 1 ? true : false}
+              />
+              <span className={styles.mark}></span>
+            </label>
+          </div>
+
+          <div>
+            <label className={styles.labelContainer} htmlFor="party">
+              Party lover
+              <input
+                readOnly
+                type="checkbox"
+                name="action"
+                id="party"
+                checked={parseInt(currentItemDetails.party_lover) === 1 ? true : false}
+              />
+              <span className={styles.mark}></span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </fieldset>
   );
 
   const userDetails = () => (
@@ -176,6 +347,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
         </div>
       </div>
       {genericDetails()}
+      {aboutThePerson()}
     </>
   );
 

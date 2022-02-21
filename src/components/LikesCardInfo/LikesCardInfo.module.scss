@@ -61,6 +61,19 @@
     flex-direction: column;
     margin: 0 1rem;
   }
+
+  .roommatesTitle {
+    margin: 10px 0 20px 0px;
+    font-weight: 400;
+    font-size: 14px;
+    span {
+      margin: 0 10px;
+      align-items: center;
+      svg {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 // Style checkbox
