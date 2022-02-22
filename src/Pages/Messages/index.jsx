@@ -7,7 +7,7 @@ import styles from "./Messages.module.scss";
 
 const Messages = () => {
   const stateFromLink = useLocation();
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
 
   return (
     <div className={styles.main}>
