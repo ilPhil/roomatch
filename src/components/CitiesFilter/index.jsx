@@ -1,11 +1,15 @@
+
 // import { useEffect } from "react";
 import { useState } from "react";
 // import { cities } from "./../../libs/cities";
+// import { useEffect, useState } from "react";
+import { cities } from "./../../libs/cities";
 import { provData } from "./../../libs/prov";
 import styles from "./CitiesFilter.module.scss";
 
 const CitiesFilter = ({ filter, setFilter, town, city }) => {
   const [prov, setProv] = useState(city);
+
   // const [changeTown, setChangeTown] = useState(town);
   // const [filteredCities, setFilteredCities] = useState([]);
 
@@ -23,6 +27,7 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
     });
   };
 
+
   return (
     <>
       <select
@@ -38,6 +43,7 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
         ))}
       </select>
 
+
       {/* <select
         className={styles.select}
         name="town"
@@ -46,6 +52,14 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
         onChange={e => {
           setChangeTown(e.target.value);
           setFilter({ ...filter, town: e.target.value });
+      <select
+        className={styles.select}
+        name="town"
+        value={changeTown}
+        onChange={(e) => {
+        setChangeTown(e.target.value)
+        setFilter({...filter, town: e.target.value})
+
         }}
       >
         {filteredCities.map((city, index) => (
@@ -53,7 +67,9 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
             {city.nome}
           </option>
         ))}
+
       </select> */}
+
     </>
   );
 };
