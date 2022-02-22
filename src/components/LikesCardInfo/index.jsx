@@ -194,7 +194,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
 
         <div className={styles.likeBtn}>
           <FiHeart
-            onClick={() => !loading && likeFunc()}
+            onClick={() => !loading && likeFunc() && setShowInfo(!showInfo)}
             className={`${styles.outlineHeart} ${styles.icon}`}
           />
         </div>
