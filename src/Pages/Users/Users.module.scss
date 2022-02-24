@@ -42,7 +42,12 @@
 @media all and (max-width: 990px) {
   .main {
     justify-content: center;
-  
+  }
+}
+
+@media (max-width: 470px) {
+  .main {
+    justify-content: center;
     .filter > .clearFilterBtn {
       margin-top: 8px;
       margin-right:auto;
