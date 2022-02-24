@@ -26,13 +26,7 @@ const Header = () => {
     <div className={styles.main}>
       <div className={styles.headerContainer}>
         <Link to={"/list"}>
-          {/* <h1 className={styles.logo}>ROOMATCH</h1> */}
           <div className={styles.logo}></div>
-          {/* <img
-            className={styles.logo}
-            src="../../../libs/img/logo/logo-header.png"
-            alt="logo"
-          /> */}
         </Link>
         <TopNav />
       </div>
