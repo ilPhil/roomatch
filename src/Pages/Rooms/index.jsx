@@ -28,6 +28,7 @@ const Rooms = () => {
 
   return (
     <div className={styles.main}>
+      <h3 className={styles.title}>Find your perfect Room!</h3>
       <div className={styles.filter}>
         <CitiesFilter
           filter={filter}
