@@ -5,15 +5,14 @@
   flex-direction: column;
   height: 100vh;
   .mainContainer {
-    width: 100%;
+  width: 100%;
     flex-grow: 1;
     overflow-y: auto;
     max-width: 1100px;
     margin: 0 auto;
     margin-top: 90px;
     padding: 20px 0 0 0;
-    // display: flex;
-    // padding-bottom: 80px;
+    background-color: $background;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     &::-webkit-scrollbar {
       width: 5px;
