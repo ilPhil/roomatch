@@ -1,10 +1,11 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   bottom: 0;
-  height: 80px;
+  height: 60px;
+  padding-top: 10px;
   background: linear-gradient(180deg, #f4fbff, $mainLightBlue);
   display: flex;
   justify-content: center;
@@ -12,8 +13,10 @@
   ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
     li {
-      margin: 28px;
       font-size: 33px;
       color: $iconcolor;
       position: relative;
