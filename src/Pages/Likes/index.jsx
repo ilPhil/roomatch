@@ -7,7 +7,7 @@ import PlaceHolder from "../../components/PlaceHolder";
 import Footer from "../../components/Footer/Footer";
 
 const Likes = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });
@@ -31,14 +31,8 @@ const Likes = () => {
           )
         );
       }, 500);
-  }, [
-    user.roomId.roomId,
-    user.roomId.wholikesme,
-    user.wholikesme,
-    dispatch,
-    user._id,
-    user.newLike.length,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user.newLike.length]);
 
   return (
     <>
