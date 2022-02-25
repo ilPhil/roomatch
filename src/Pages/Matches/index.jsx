@@ -3,27 +3,23 @@ import MatchesProfiles from "../../components/MatchesProfiles";
 import MessagePreview from "../../components/MessagePreview";
 import styles from "./Matches.module.scss";
 import Footer from "../../components/Footer/Footer";
-import { useEffect, useState } from "react";
 
 const Matches = () => {
-  const user = useSelector(state => state.user);
-  const [messageList, setMessageList] = useState([]);
+  const user = useSelector((state) => state.user);
+  let messageList = [];
 
-  useEffect(() => {
-    if (Object.keys(user.messages).length > 0) {
-      Object.keys(user.messages).map(message =>
-        setMessageList([...messageList, user.messages[message]])
+  if (Object.keys(user.messages).length > 0) {
+    Object.keys(user.messages).map(
+      (message) => (messageList = [...messageList, user.messages[message]])
+    );
+
+    messageList.sort((a, b) => {
+      return (
+        new Date(b.discussion[b.discussion.length - 1].date) -
+        new Date(a.discussion[a.discussion.length - 1].date)
       );
-
-      messageList.sort((a, b) => {
-        return (
-          new Date(b.discussion[b.discussion.length - 1].date) -
-          new Date(a.discussion[a.discussion.length - 1].date)
-        );
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [Object.keys(user.messages).length]);
+    });
+  }
 
   return (
     <>
