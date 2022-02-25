@@ -18,6 +18,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
   const loggedUser = useSelector(store => store.user);
   const user = useSelector(state => state.user);
 
+
   const currentItemDetails = isRoom ? data.friendlyWith : data.iam;
   const currentItem = data;
 
