@@ -20,24 +20,24 @@
 
 Hello there! 👋🏻
 
-Welcome on **Roomatch** world, a place where to find the **perfect room** at the **perfect price** with the **PERFECT ROOMMATES**! 🤙🏻
+Welcome on **Roomatch** world, a place where you can find the **perfect room** at the **perfect price** with the **PERFECT ROOMMATES**! 🤙🏻
 
 Will you find your perfect roommate?! 🔮 👀
 
-Let us give you a brief overview of *Roomatch* concept and then take your decision 🙃
+Let us give you a brief overview of *Roomatch* concept and then make your choice! 🙃
 
-We don’t like the pointed list, so we only say that the you can **Create** the **personal account** on **Roomatch** platform and edit it whenever needed. 📝
+We don’t like pointed lists, way too boring, so we'll only tell you that the you can **Create** your **personal account** on **Roomatch** platform and edit it whenever needed. 📝
 
-After registration, you can **Create** a **Room ads** with all the room’s and flat’s *features*, *photos* and what’s the **perfect roommate** should have 📝 ..and then **remove** the **Room ads** after you have found the **coolest roommate**.😎
+After registration, you can **Create** a **Room ads** with all the room and flat *features*, *photos* and a short list of preferences to make sure you and the **perfect roommate** are on the same page 📝... and then you can **remove** the **Room ads** once you have found the **coolest roommate**. 😎 
 
-If your are offering a room, the system will show you the **potential roommates** list, **filtered** by *city* and **sorted** by *highest compatibility* person-room - to get the best match ever quickly! 🎯
+If your are offering a room, the system will show you the **potential roommates** list, **filtered** by *city* and **sorted** by *highest compatibility* person-room — to get the best match ever quickly! 🎯
 
-You can always check for *roommates everywhere* **removing** all the **filters**..! 😊
-And when you like the person.. just click on **sweetie Like heart** ❤️ and wait for the **match** to start a **conversation**! 📩 
+You can always check for *roommates everywhere* through the country by **removing** all the **filters**...! 😊
+And when you like the person... just click on **sweetie Like heart** ❤️ and wait for the **match** to start a **conversation**! 📩 
 
-If you are looking for a **comfortable room** instead, you will see the **Rooms** list **filtered** by *city*, but don’t worry you can always **remove** the *filters* and see **everything on the “market”**. 🏡 🗺️
+If you are looking for a **comfortable room** instead, you will see the **Rooms** list **filtered** by *city*, but don’t worry: you can always **remove** the *filters* and see **everything on the “market”**. 🏡 🗺️
 
-**Give a like** to your **favourite rooms** 🥰 and wait for the **match** to get more info and to **chat with the author** to check if your domestic partnership could works! And if not, you can always **remove the like** 💔
+**Give a like** to your **favourite rooms** 🥰 and wait for the **match** to get more info and to **chat with the author** to check if your domestic partnership could work! And if not, you can always **remove the like** 💔
 
 If you are wondering how to **see the new matches and messages**, the answer is that you will receive the **notification** for every *new match* and *message*! You will be **always updated** 📲
 
@@ -52,11 +52,11 @@ If you are wondering how to **see the new matches and messages**, the answer is 
 <h3>Frontend:</h3>
   <ul>
     <li>HTML</li>
-    <li>Javascript</li>
-    <li>React.js</li>
+    <li>JavaScript</li>
+    <li>React JS</li>
     <li>Redux</li>
     <li>Axios</li>
-    <li>SASS/SCSS</li>
+    <li>SCSS/SASS</li>
   </ul>
   <h3>Backend:</h3>
   <ul>
