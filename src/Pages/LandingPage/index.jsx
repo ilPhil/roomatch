@@ -26,7 +26,7 @@ const LandingPage = () => {
         </div>
       </div>
       <Body />
-      <Footer />
+      <Footer landing={true} />
     </>
   );
 };

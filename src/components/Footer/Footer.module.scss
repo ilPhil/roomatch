@@ -1,6 +1,6 @@
 @import "./../../libs/variables.scss";
 
-.footerWrapper {
+.footerWrapper, .footerWrapperLanding {
   .footer {
     display: flex;
     flex-direction: column;
@@ -42,5 +42,11 @@
       padding: 0 8px;
       font-size: 11px;
     }
+  }
+}
+
+@media all and (max-width: 990px) {
+  .footerWrapper {
+    display: none;
   }
 }
