@@ -12,9 +12,41 @@
 
 <h3 align="center"><b>A perfect place, a perfect price, a perfect match.</b></h3>
 
-<p>Create your personal roommate profile and get started within minutes. Don't let the length of the registration form scare you away, it's our way to ensure you can point out anything that'd make you feel at ease and comfortable with your roommate-to-be: get specific with things like pet preference, room features,  neighborhood details, and more!</p>
+<!-- <p>Create your personal roommate profile and get started within minutes. Don't let the length of the registration form scare you away, it's our way to ensure you can point out anything that'd make you feel at ease and comfortable with your roommate-to-be: get specific with things like pet preference, room features,  neighborhood details, and more!</p>
 <p>While you're here, you can navigate through a list of rooms made available by other users looking for a roommate. Following some simple steps, you'll be able to find the best solution based upon your actual needs and your current budget. Either this or you can share your own!</p>
-<p>As we already mentioned, no more roommate horror stories! Find and get in touch only with the people who match with you and fit the most your likings.</p>
+<p>As we already mentioned, no more roommate horror stories! Find and get in touch only with the people who match with you and fit the most your likings.</p> -->
+
+
+
+Hello there! 👋🏻
+
+Welcome on **Roomatch** world, a place where to find the **perfect room** at the **perfect price** with the **PERFECT ROOMMATES**! 🤙🏻
+
+Will you find your perfect roommate?! 🔮 👀
+
+Let us give you a brief overview of *Roomatch* concept and then take your decision 🙃
+
+We don’t like the pointed list, so we only say that the you can **Create** the **personal account** on **Roomatch** platform and edit it whenever needed. 📝
+
+After registration, you can **Create** a **Room ads** with all the room’s and flat’s *features*, *photos* and what’s the **perfect roommate** should have 📝 ..and then **remove** the **Room ads** after you have found the **coolest roommate**.😎
+
+If your are offering a room, the system will show you the **potential roommates** list, **filtered** by *city* and **sorted** by *highest compatibility* person-room - to get the best match ever quickly! 🎯
+
+You can always check for *roommates everywhere* **removing** all the **filters**..! 😊
+And when you like the person.. just click on **sweetie Like heart** ❤️ and wait for the **match** to start a **conversation**! 📩 
+
+If you are looking for a **comfortable room** instead, you will see the **Rooms** list **filtered** by *city*, but don’t worry you can always **remove** the *filters* and see **everything on the “market”**. 🏡 🗺️
+
+**Give a like** to your **favourite rooms** 🥰 and wait for the **match** to get more info and to **chat with the author** to check if your domestic partnership could works! And if not, you can always **remove the like** 💔
+
+If you are wondering how to **see the new matches and messages**, the answer is that you will receive the **notification** for every *new match* and *message*! You will be **always updated** 📲
+
+
+**No more roommate horror stories!** 👻 🙊 🙉 🙈 
+
+🤙🏻 Ready to start?! 🚀
+
+<br/><br/>
 
 <h2>Technologies used</h2>
 <h3>Frontend:</h3>
@@ -32,6 +64,7 @@
     <li>MongoDB</li>
   </ul>
 
+<br/><br/>
 <h2>How to run it:</h2>
 
 Once you've forked, downloaded the zip file or cloned the repository, run the following command to install all the libraries you need to run it properly:
